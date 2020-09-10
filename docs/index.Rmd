@@ -1,0 +1,63 @@
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+img {
+  border-radius: 8px;
+  float: left;
+  padding: 0 20px 0 0;
+}
+</style>
+
+<p>
+
+<img src="~/Desktop/Personal Website/Profile.jpg" style="width:230px;" class="left">
+
+# About
+
+I am a Biostatistics ScM graduate student at the Brown University School of Public Health interested in complex predictive modeling, multivariate methods, and statistical/machine learning. Prior to Brown, I received my BS in Statistical Science at the University of Minnesota - Twin Cities under the advisement of Professor [Jessica Nielson](https://med.umn.edu/bio/psychiatry/jessica-nielson) and the [Nielson Lab](http://nielsonlab.umn.edu/). In the Nielson Lab, we developed multi-modal prediction models of neuropsychiatric dysfunction in traumatic brain injury using existing clinical datasets from public repositories. The resulting manuscript documenting our novel computational study is currently under revision for publication to the Journal of Neurotrauma.
+
+My favorite part about biostatistics is having the opportunity to collaborate with a diverse range of researchers on complicated and meaningful biomedical problems.
+
+Here is my [CV](https://linfengzou.github.io/linzou.github.io/lzou_cv.pdf).
+
+</p>
+
+
+
+Lin Zou
+
+Biostatistics ScM
+
+<i class="fas fa-map-marker-alt"></i style="font-size:20px;"> Brown University
+
+[Email](mailto:lin_zou@brown.edu)
+
+<p style="text-align: center;">
+<a href="https://www.linkedin.com/in/lin-zou-09bb6b13b/"> <i class="fab fa-linkedin" style="font-size:60px;"></i></a>
+</p>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+<img src="~/Desktop/Personal Website/Lighthouse.jpg" style="width:225px;">
+<img src="~/Desktop/Personal Website/Creek.jpg" style="width:225px;">
+<img src="~/Desktop/Personal Website/Wave.jpg" style="width:225px;">
+<img src="~/Desktop/Personal Website/Mountain.jpg" style="width:225px;">
+
+
