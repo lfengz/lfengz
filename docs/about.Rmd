@@ -1,3 +1,7 @@
+---
+output: html_document
+---
+
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <style>
@@ -10,7 +14,7 @@ img {
 
 <p>
 
-<img src="~/Desktop/Personal Website/Profile.jpg" style="width:230px;" class="left">
+<img src="https://linfengzou.github.io/linzou.github.io/Profile.jpg" style="width:230px;" class="left">
 
 # Publications
 
@@ -24,7 +28,7 @@ Group project. (2019). Particulate Matter and its Association in Asthma Outcomes
 
 </p>
 
-<br />
+<br /> <br />
 
 Lin Zou
 

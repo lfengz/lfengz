@@ -1,3 +1,7 @@
+---
+output: html_document
+---
+
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <style>
@@ -10,7 +14,7 @@ img {
 
 <p>
 
-<img src="~/Desktop/Personal Website/Profile.jpg" style="width:230px;" class="left">
+<img src="https://linfengzou.github.io/linzou.github.io/Profile.jpg" style="width:230px;" class="left">
 
 # About
 
@@ -22,7 +26,7 @@ Here is my [CV](https://linfengzou.github.io/linzou.github.io/lzou_cv.pdf).
 
 </p>
 
-
+<br />
 
 Lin Zou
 
@@ -55,9 +59,11 @@ Biostatistics ScM
 }
 </style>
 
-<img src="~/Desktop/Personal Website/Lighthouse.jpg" style="width:225px;">
-<img src="~/Desktop/Personal Website/Creek.jpg" style="width:225px;">
-<img src="~/Desktop/Personal Website/Wave.jpg" style="width:225px;">
-<img src="~/Desktop/Personal Website/Mountain.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linzou.github.io/Lighthouse.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linzou.github.io/Creek.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linzou.github.io/Wave.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linzou.github.io/Mountain.jpg" style="width:225px;">
 
-
+```{r}
+render_site()
+```
