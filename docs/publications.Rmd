@@ -1,0 +1,45 @@
+---
+output: html_document
+---
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<style>
+img {
+  border-radius: 8px;
+  float: left;
+  padding: 0 20px 0 0;
+}
+</style>
+
+<p>
+
+<img src="https://linfengzou.github.io/linzou.github.io/Profile.jpg" style="width:230px;" class="left">
+
+# Publications
+
+Zou L., Pierce B., Nielson J. (2020). A Multi-modal Assessment of Clinical Predictors for Traumatic Brain Injury Endpoints. Journal of Neurotrauma. (In Review).
+
+# Projects
+
+Zou L. (2020). Survival Analysis of Skin Cutaneous Melanoma Data Retrieved from The Cancer Genome Atlas Program. Senior Capstone Project.
+
+Group project. (2019). Particulate Matter and its Association in Asthma Outcomes. Colorado Summer Institute in Biostatistics.
+
+</p>
+
+<br /> <br />
+
+Lin Zou
+
+Biostatistics ScM
+
+<i class="fas fa-map-marker-alt" style="font-size:15px;"></i> Brown University
+
+[Email](mailto:lin_zou@brown.edu)
+
+<br />
+
+## R Shiny App
+
+[Rhode Island Department of Health COVID-19 Interactive Data Visualization](https://linzoubrownuniversity.shinyapps.io/RIDOH/)

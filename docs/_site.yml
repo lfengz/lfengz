@@ -6,7 +6,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Publications and Projects"
-      href: about.html
+      href: publications.html
 output: 
   html_document:
     theme: flatly
