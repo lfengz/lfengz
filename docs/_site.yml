@@ -7,7 +7,4 @@ navbar:
       href: index.html
     - text: "Publications and Projects"
       href: about.html
-output:
-  html_document:
-    theme: flatly
-    css: style.css
+output: html_document
