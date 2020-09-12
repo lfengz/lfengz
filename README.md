@@ -1,5 +1,4 @@
-# Lin Feng Zou
-## Brown University Biostatistics ScM '22
-Personal website and collection of publications/projects
-
+# Lin Zou
+# Biostatistics ScM
+# Brown University
 LinkedIn profile: https://www.linkedin.com/in/lin-zou-09bb6b13b/
