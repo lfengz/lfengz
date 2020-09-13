@@ -62,4 +62,6 @@ Biostatistics ScM
 <img src="https://linfengzou.github.io/linfengzou.github.io/Wave.jpg" style="width:225px;">
 <img src="https://linfengzou.github.io/linfengzou.github.io/Mountain.jpg" style="width:225px;">
 
-
+```{r}
+render_site()
+```
