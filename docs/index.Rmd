@@ -14,7 +14,7 @@ img {
 
 <p>
 
-<img src="https://linfengzou.github.io/linzou.github.io/Profile.jpg" style="width:230px;" class="left">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Profile.jpg" style="width:230px;" class="left">
 
 # About
 
@@ -22,11 +22,9 @@ I am a Biostatistics ScM graduate student at the Brown University School of Publ
 
 My favorite part about biostatistics is having the opportunity to collaborate with a diverse range of researchers on complicated and meaningful biomedical problems.
 
-Here is my [CV](https://linfengzou.github.io/linzou.github.io/lzou_cv.pdf).
+Here is my [CV](https://linfengzou.github.io/linfengzou.github.io/lzou_cv.pdf).
 
 </p>
-
-<br />
 
 Lin Zou
 
@@ -59,9 +57,9 @@ Biostatistics ScM
 }
 </style>
 
-<img src="https://linfengzou.github.io/linzou.github.io/Lighthouse.jpg" style="width:225px;">
-<img src="https://linfengzou.github.io/linzou.github.io/Creek.jpg" style="width:225px;">
-<img src="https://linfengzou.github.io/linzou.github.io/Wave.jpg" style="width:225px;">
-<img src="https://linfengzou.github.io/linzou.github.io/Mountain.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Lighthouse.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Creek.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Wave.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Mountain.jpg" style="width:225px;">
 
 

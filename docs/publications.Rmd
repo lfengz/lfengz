@@ -14,7 +14,7 @@ img {
 
 <p>
 
-<img src="https://linfengzou.github.io/linzou.github.io/Profile.jpg" style="width:230px;" class="left">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Profile.jpg" style="width:230px;" class="left">
 
 # Publications
 
@@ -28,7 +28,7 @@ Group project. (2019). Particulate Matter and its Association in Asthma Outcomes
 
 </p>
 
-<br /> <br />
+<br />
 
 Lin Zou
 
