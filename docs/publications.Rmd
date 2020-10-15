@@ -18,7 +18,7 @@ img {
 
 # Publications
 
-Zou L., Pierce B., Nielson J. (2020). A Multi-modal Assessment of Clinical Predictors for Traumatic Brain Injury Endpoints. Journal of Neurotrauma. (In Review).
+Zou L., Pierce B., Nielson J. (2020). [A Multi-modal Assessment of Clinical Predictors for Traumatic Brain Injury Endpoints](https://doi.org/10.1089/neu.2020.7222). Journal of Neurotrauma.
 
 # Projects
 
