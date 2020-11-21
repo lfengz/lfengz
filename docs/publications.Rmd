@@ -22,7 +22,7 @@ Zou L., Pierce B., Nielson J. (2020). [A Multi-modal Assessment of Clinical Pred
 
 # Projects
 
-Zou L. (2020). Survival Analysis of Skin Cutaneous Melanoma Data Retrieved from The Cancer Genome Atlas Program. Senior Capstone Project.
+Zou L. (2020). [Survival Analysis of Skin Cutaneous Melanoma Data Retrieved from The Cancer Genome Atlas Program](https://linfengzou.github.io/linfengzou.github.io/Independent_Research_Final_Report.pdf). Senior Capstone Project.
 
 Group project. (2019). Particulate Matter and its Association in Asthma Outcomes. Colorado Summer Institute in Biostatistics.
 
