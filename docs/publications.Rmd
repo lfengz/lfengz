@@ -42,6 +42,8 @@ Biostatistics ScM
 
 <br />
 
-## R Shiny App
+## R Shiny Apps
+
+[COVID-19 in North America](https://php2560finalproject.shinyapps.io/PHP_2560_Final_Project2/)
 
 [Rhode Island Department of Health COVID-19 Interactive Data Visualization](https://linzoubrownuniversity.shinyapps.io/RIDOH/)
