@@ -4,18 +4,6 @@ output: html_document
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<style>
-img {
-  border-radius: 8px;
-  float: left;
-  padding: 0 20px 0 0;
-}
-</style>
-
-<p>
-
-<img src="https://linfengzou.github.io/linfengzou.github.io/Profile.jpg" style="width:230px;" class="left">
-
 # Publications
 
 Zou L., Pierce B., Nielson J. (2020). [A Multi-modal Assessment of Clinical Predictors for Traumatic Brain Injury Endpoints](https://doi.org/10.1089/neu.2020.7222). Journal of Neurotrauma.
@@ -24,25 +12,13 @@ Zou L., Pierce B., Nielson J. (2020). [A Multi-modal Assessment of Clinical Pred
 
 Zou L. (2020). [Exploratory Time Series Analysis of COVID-19 in Rhode Island and the United States](https://linfengzou.github.io/linfengzou.github.io/R Sample.pdf). PHP 2560 Midterm Project.
 
+Group Project. (2020). [Assessment of Clinical Predictors for Breast Cancer Diagnosis Using Statistical Learning Methods](https://linfengzou.github.io/linfengzou.github.io/Research Sample 2.pdf). PHP 2514 Final Project.
+
+Group Project. (2020). [A Comparison of Parametric and Nonparametric Tests of Location for Non-normal Data](Research Sample 3.pdf). PHP 2515 Final Project.
+
 Zou L. (2020). [Survival Analysis of Skin Cutaneous Melanoma Data Retrieved from The Cancer Genome Atlas Program](https://linfengzou.github.io/linfengzou.github.io/Research Sample.pdf). Senior Capstone Project.
 
-Group project. (2019). Particulate Matter and its Association in Asthma Outcomes. Colorado Summer Institute in Biostatistics.
-
-</p>
-
-<br />
-
-Lin Zou
-
-Biostatistics ScM
-
-<i class="fas fa-map-marker-alt" style="font-size:15px;"></i> Brown University
-
-[Email](mailto:lin_zou@brown.edu)
-
-<br />
-
-## R Shiny Apps
+# R Shiny Apps
 
 [COVID-19 in North America](https://php2560finalproject.shinyapps.io/PHP_2560_Final_Project2/)
 
