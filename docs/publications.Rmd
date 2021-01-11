@@ -23,3 +23,33 @@ Zou L. (2020). [Survival Analysis of Skin Cutaneous Melanoma Data Retrieved from
 [COVID-19 in North America](https://php2560finalproject.shinyapps.io/PHP_2560_Final_Project2/)
 
 [Rhode Island Department of Health COVID-19 Interactive Data Visualization](https://linzoubrownuniversity.shinyapps.io/RIDOH/)
+
+<br/>
+
+<p style="text-align: center;">
+<a href="https://www.linkedin.com/in/lin-zou-09bb6b13b/"> <i class="fab fa-linkedin" style="font-size:60px;"></i></a>
+</p>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+<img src="https://linfengzou.github.io/linfengzou.github.io/Lighthouse.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Creek.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Wave.jpg" style="width:225px;">
+<img src="https://linfengzou.github.io/linfengzou.github.io/Mountain.jpg" style="width:225px;">

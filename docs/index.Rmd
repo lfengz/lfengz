@@ -34,6 +34,8 @@ Biostatistics ScM
 
 [Email](mailto:lin_zou@brown.edu)
 
+<br/>
+
 <p style="text-align: center;">
 <a href="https://www.linkedin.com/in/lin-zou-09bb6b13b/"> <i class="fab fa-linkedin" style="font-size:60px;"></i></a>
 </p>
