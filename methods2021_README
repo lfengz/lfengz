@@ -1,5 +1,256 @@
-# Logistic Regression - Lin Zou
+## Logistic Regression - Lin Zou
 
 We used logistic regression, a powerful and interpretable linear classifier, to model the association of hypertension, pure hypercholesterolemia, and other covariates with atherosclerosis.
 
-# Packages
+## Installation
+
+Install the following packages to run the logistic regression analysis.
+
+```julia
+using DataFrames
+using CSV
+using Plots
+ENV["GRDIR"] = ""
+using Pkg; Pkg.build("GR")
+using GLM
+using StatsBase
+using Lathe
+using MLBase
+using ClassImbalance
+using ROCAnalysis
+using Random
+using MLDataUtils
+```
+
+## Usage
+
+Read in the data and convert it to a DataFrame object.
+
+```julia
+df = DataFrame(CSV.File("/gpfs/data/biol1555/projects/team5/data/combined_file.csv"))
+```
+
+Obtain a summary of the dataframe.
+
+```julia
+println(size(df))
+describe(df)
+```
+
+Take a look at the column names.
+
+```julia
+names(df)
+```
+
+Check for class imbalance in the outcome.
+
+```julia
+countmap(df.Atherosclerosis41401)
+```
+
+Process the data for fitting the model by one-hot encoding the GENDER and agegroup variables.
+
+```julia
+Lathe.preprocess.OneHotEncode(df,:GENDER)
+Lathe.preprocess.OneHotEncode(df,:agegroup)
+select!(df, Not([:Column1,:SUBJECTID,:GENDER,:M,:agegroup,:elder]))
+first(df,5)
+```
+
+Convert the one-hot encoded variables to data type Bool.
+
+```julia
+df[!, :lab50889abnormal] = convert.(Bool, df[:, :lab50889abnormal])
+df[!, :lab50907abnormal] = convert.(Bool, df[:, :lab50907abnormal])
+df[!, :lab50956abnormal] = convert.(Bool, df[:, :lab50956abnormal])
+df[!, :lab51003abnormal] = convert.(Bool, df[:, :lab51003abnormal])
+df[!, :Hypertension4019] = convert.(Bool, df[:, :Hypertension4019])
+df[!, :Hypercholesterolemia2720] = convert.(Bool, df[:, :Hypercholesterolemia2720])
+df[!, :Atherosclerosis41401] = convert.(Bool, df[:, :Atherosclerosis41401])
+df[!, :F] = convert.(Bool, df[:, :F])
+df[!, :neonate] = convert.(Bool, df[:, :neonate])
+df[!, :adult] = convert.(Bool, df[:, :adult])
+```
+
+Generate indices for splitting the data for 5-fold cross validation. The random seed 2561 was used for reproducibility.
+
+```julia
+Random.seed!(2561)
+index = kfolds(collect(1:size(df,1)), k = 5)
+```
+
+Create empty arrays for storing the evaluation metrics.
+
+```julia
+accuracy = []
+sensitivity = []
+specificity = []
+precision = []
+fmeasure = []
+fpr = []
+sens = []
+auc = []
+```
+
+For each of the five training and testing sets we created using the indices we generated, we fit the model with the training data, make predictions on the testing data, convert the probability scores to classes using a 0.5 probability threshold, and store the computed evaluation metrics into their corresponding arrays.
+
+```julia
+for i in 1:5
+
+    # Training and testing indices
+    train_index, test_index = index[i]
+
+    # Training and testing sets
+    train = df[train_index,:]
+    test = df[test_index,:]
+    
+    # Train logistic regression model
+    fm = @formula(Atherosclerosis41401 ~ F + firstadmitage + neonate + adult + lab50889abnormal + lab50907abnormal + lab50956abnormal + lab51003abnormal + Hypertension4019 + Hypercholesterolemia2720)
+    logit = glm(fm, train, Binomial(), ProbitLink())
+
+    # Print the estimated coefficients
+    # print(logit)
+
+    # Predict the target variable on test data 
+    prediction = predict(logit,test)
+
+    # Convert probability score to class
+    prediction_class = [if x > 0.5 1 else 0 end for x in prediction]
+
+    # Store results in dataframe
+    prediction_df = DataFrame(y_actual = test.Atherosclerosis41401, y_predicted = prediction_class, prob_predicted = prediction)
+    prediction_df.correctly_classified = prediction_df.y_actual .== prediction_df.y_predicted
+
+    # Accuracy Score
+    push!(accuracy, mean(prediction_df.correctly_classified))
+    
+    # Confusion Matrix
+    confusion_matrix = MLBase.roc(prediction_df.y_actual, prediction_df.y_predicted)
+
+    # Sensitivity
+    push!(sensitivity, confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fn))
+
+    # Specificity
+    push!(specificity, confusion_matrix.tn / (confusion_matrix.tn + confusion_matrix.fp))
+
+    # Precision
+    push!(precision, confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fp))
+
+    # F-Measure
+    push!(fmeasure, (2 * (confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fp)) * (confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fn))) / ((confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fp)) + (confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fn))))
+
+    # ROC Curve
+    actual = convert.(Int64, prediction_df.y_actual)
+    predicted = convert.(Int64, prediction_df.y_predicted)
+    roc_df = ROCAnalysis.roc(actual, predicted)
+
+    DataFrame(roc_df)
+
+    # False positive rate (ROC)
+    push!(fpr, roc_df.pfa[2])
+
+    # Sensitivity (ROC)
+    push!(sens, 1 - roc_df.pmiss[2])
+
+    # AUC
+    push!(auc, ROCAnalysis.auc(roc_df))
+
+end
+```
+
+Take the mean of the results to obtain 5-fold cross validated evaluation metrics for assessing the model.
+
+```julia
+# Accuracy
+mean(accuracy)
+
+# Sensitivity
+mean(sensitivity)
+
+# Specificity
+mean(specificity)
+
+# Precision
+mean(precision)
+
+# F-1 Score
+mean(fmeasure)
+
+# False positive rate (ROC)
+mean(fpr)
+
+# Sensitivity (ROC)
+mean(sens)
+
+# AUC
+mean(auc)
+```
+
+Plot the 5-fold cross validated ROC curve at the 0.5 probability threshold.
+
+```julia
+df = DataFrame(FPR = [0, mean(fpr), 1], Sensitivity = [0, mean(sens), 1])
+Plots.plot(df.FPR, df.Sensitivity, label = "ROC Curve", lw = 2, legend=:bottomright, title = "Logistic Regression ROC Curve", xlabel = "False Positive Rate", ylabel = "True Positive Rate")
+Plots.plot!(0:1, 0:1, label = "Reference Line")
+```
+
+Extract one set of training and testing data.
+
+```julia
+# Training and testing indices
+train_index, test_index = index[1]
+
+# Training and testing sets
+train = df[train_index,:]
+test = df[test_index,:]
+```
+
+Create empty arrays for storing precision, recall, and false positive rate.
+
+```julia
+prec = []
+rec = []
+fpr = []
+```
+
+For probability thresholds from 0.1 to 0.9 in increments of 0.01, fit the model with the training data, predict on the testing data, convert the probability scores to classes using the ith probability threshold, compute the evaluation metrics, and store the results in their corresponding array.
+
+```julia
+for thresh in 0.1:0.01:0.9
+    
+    # Train logistic regression model
+    fm = @formula(Atherosclerosis41401 ~ F + firstadmitage + neonate + adult + lab50889abnormal + lab50907abnormal + lab50956abnormal + lab51003abnormal + Hypertension4019 + Hypercholesterolemia2720)
+    logit = glm(fm, train, Binomial(), ProbitLink())
+
+    # Predict the target variable on test data 
+    prediction = predict(logit,test)
+
+    # Convert probability score to class
+    prediction_class = [if x > thresh 1 else 0 end for x in prediction]
+
+    # Store results in dataframe
+    prediction_df = DataFrame(y_actual = test.Atherosclerosis41401, y_predicted = prediction_class, prob_predicted = prediction)
+    prediction_df.correctly_classified = prediction_df.y_actual .== prediction_df.y_predicted
+
+    # Confusion Matrix
+    confusion_matrix = MLBase.roc(prediction_df.y_actual, prediction_df.y_predicted)
+
+    # Sensitivity
+    push!(rec, confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fn))
+
+    # Precision
+    push!(prec, confusion_matrix.tp / (confusion_matrix.tp + confusion_matrix.fp))
+
+    # FPR
+    push!(fpr, 1 - (confusion_matrix.tn / (confusion_matrix.tn + confusion_matrix.fp)))
+end
+```
+
+Plot the ROC curve at multiple probability thresholds.
+
+```julia
+# ROC curve at multiple thresholds
+plot(fpr, rec, label = "ROC Curve", lw = 2, legend=:bottomright, title = "Logistic Regression ROC Curve", xlabel = "False Positive Rate", ylabel = "True Positive Rate")
+plot!(0:1, 0:1, label = "Reference Line")
+```
